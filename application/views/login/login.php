@@ -194,6 +194,10 @@
 			color: black;
 		}
 		/*test git*/
+		/* requied form login */
+		span{
+			color: red;
+		}
 	
     </style>
 </head>
@@ -206,9 +210,13 @@
 			
 			<input type="text" name="login" placeholder="UserName" required>
 			<i class="fa fa-user fa-2x"></i> <br/> <br/>
+			<span class=" text-danger"><?php echo form_error('login'); ?></span>
+
 
 			<input type="password" name="password" placeholder="Password" required>
 			<i class="fa fa-lock fa-2x"></i> <br> <br>
+			<span class=" text-danger"><?php echo form_error('password'); ?></span>
+
 
 			<input type="submit" name="submit" value="Login" >
 			<br/> <br/>

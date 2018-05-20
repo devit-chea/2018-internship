@@ -19,7 +19,7 @@ class Connection extends CI_Controller {
 		{
 			$this->load->helper('form');
 			$this->load->library('form_validation');
-			$this->form_validation->set_rules('login', 'Login', 'required|strip_tags');
+			$this->form_validation->set_rules('login', 'User Name', 'required|strip_tags');
 			$this->form_validation->set_rules('password', 'Password', 'required|strip_tags');
 			if ($this->form_validation->run() === FALSE) {
 				log_message('debug', 'Let\'s display the login form');
@@ -69,6 +69,6 @@ class Connection extends CI_Controller {
 
 		log_message('debug', 'Logout current user and redirect to the home page');
 		$this->session->sess_destroy();
-		redirect('Connection/login');
+		redirect('Connection/login','refresh');
 	}
 }
